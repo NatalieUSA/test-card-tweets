@@ -54,7 +54,9 @@ class UserCard extends Component {
         </div>
         <div className={styles.wrapInfo}>
           <p className={styles.tweets}>{tweets} tweets</p>
-          <p className={styles.followers}>{followers} followers</p>
+          <p className={styles.followers}>
+            {new Intl.NumberFormat('en').format(followers)} followers
+          </p>
           <Button type="button">follow</Button>
         </div>
       </li>
