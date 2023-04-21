@@ -1,0 +1,112 @@
+.list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  position: relative;
+  width: 380px;
+  height: 460px;
+  background: linear-gradient(114.99deg, #471ca9 -1%, #5736a3 54%, #4b2a99 79%);
+  box-shadow: -3px 7px 21px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+
+  list-style: none;
+}
+.logo {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.picture {
+  position: absolute;
+  margin: 28px 36px auto 36px;
+}
+
+.ellipse {
+  position: absolute;
+  top: 178px;
+
+  left: 50%;
+  transform: translateX(-50%);
+}
+.rectangle::before {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 8px;
+  left: 0px;
+  top: 214px;
+
+  background: #ebd8ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06), inset 0px -2px 4px #ae7be3,
+    inset 0px 4px 3px #fbf8ff;
+}
+
+.avatar {
+  position: absolute;
+  top: 187px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5736a3;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 62px;
+  height: 62px;
+}
+
+.wrapInfo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 284px;
+  width: 100%;
+}
+
+.tweets,
+.followers {
+  margin: 0;
+
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  line-height: calc(24 / 20);
+  text-transform: uppercase;
+
+  color: #ebd8ff;
+}
+
+.tweets {
+  margin-bottom: 16px;
+}
+
+.followers {
+  margin-bottom: 26px;
+}
+
+// .btn {
+//   display: block;
+//   text-align: center;
+//   text-transform: uppercase;
+//   width: 196px;
+//   height: 50px;
+//   background: #ebd8ff;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+//   border-radius: 10px;
+//   border: none;
+//   color: #373737;
+//   font-family: 'Montserrat';
+//   font-weight: 600;
+//   font-size: 18px;
+//   line-height: calc(22 / 18);
+// }
+
+// .buttonActive {
+//   background: #5cd3a8;
+// }

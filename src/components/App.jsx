@@ -1,3 +1,11 @@
+import UserCard from './UserCard/UserCard';
+
+
 export const App = () => {
-  return <div></div>;
+  return (
+    <div style={{ margin: 'auto' }}>
+      <UserCard />
+   
+    </div>
+  );
 };
