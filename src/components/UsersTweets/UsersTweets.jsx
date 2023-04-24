@@ -1,8 +1,8 @@
-import { ErrorMessage } from 'components/shared/ErrorMessage/ErrorMessage';
-import { Loader } from 'components/shared/Loader/Loader';
-import { getUsers } from 'components/shared/api/api-users';
 import { useEffect, useState } from 'react';
 import UserList from './UserList/UserList';
+import { getUsers } from 'components/shared/api/api-users';
+import { ErrorMessage } from 'components/shared/ErrorMessage/ErrorMessage';
+import { Loader } from 'components/shared/Loader/Loader';
 
 const UsersTweets = () => {
   const [users, setUsers] = useState([]);

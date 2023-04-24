@@ -5,7 +5,13 @@ import Button from 'components/shared/Button/Button';
 import styles from '../../UsersTweets/user-tweets.module.scss';
 
 const UserList = ({ items, ...otherProps }) => {
-  const itemsPerPage = 6;
+  const [itemsPerPage, setItemsPerPage] = useState(13);
+
+  const onLoadMore = () => {
+    const next = itemsPerPage;
+    setItemsPerPage(next + itemsPerPage);
+  };
+
   return (
     <div>
       <ul className={styles.list}>
@@ -15,7 +21,11 @@ const UserList = ({ items, ...otherProps }) => {
           </li>
         ))}
       </ul>
-      {itemsPerPage < items.length && <Button type="button">Load more</Button>}
+      {itemsPerPage < items.length && (
+        <Button onClick={onLoadMore} type="button">
+          Load more
+        </Button>
+      )}
     </div>
   );
 };
