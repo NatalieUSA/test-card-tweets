@@ -1,14 +1,32 @@
-import Button from 'components/shared/Button/Button';
+import { useEffect, useState } from 'react';
 import Logo from '../../image/Logo.png';
 import Ellipse from '../../image/Ellipse.png';
 import Picture from '../../image/Picture.png';
 import styles from '../../UsersTweets/user-tweets.module.scss';
 
-const UserItem = ({ item, ...otherProps }) => {
-  //   console.log(otherProps);
-  console.log(item);
-  const { user, tweets, followers, avatar } = item;
-  console.log(followers);
+const UserItem = ({ item }) => {
+  const { id, user, tweets, followers, avatar } = item;
+
+  const [isFollow, setIsFollower] = useState(
+    JSON.parse(localStorage.getItem(`${id}-isFollow`)) ?? false
+  );
+  const [totalFollowers, setNumbFollowers] = useState(
+    JSON.parse(localStorage.getItem(`${id}-followers`)) ?? followers
+  );
+
+  useEffect(() => {
+    localStorage.setItem(`${id}-isFollower`, JSON.stringify(isFollow));
+    localStorage.setItem(`${id}-user`, JSON.stringify(totalFollowers));
+  }, [id, totalFollowers, isFollow]);
+
+  const onFollowing = () => {
+    setIsFollower(false);
+    setNumbFollowers(totalFollowers - 1);
+  };
+  const onFollow = () => {
+    setIsFollower(true);
+    setNumbFollowers(totalFollowers + 1);
+  };
 
   return (
     <>
@@ -30,16 +48,21 @@ const UserItem = ({ item, ...otherProps }) => {
       <div className={styles.wrapInfo}>
         <p className={styles.tweets}>{tweets} tweets</p>
         <p className={styles.followers}>
-          {new Intl.NumberFormat('en').format(followers)} followers
+          {new Intl.NumberFormat('en').format(totalFollowers)} followers
         </p>
-
-        <Button
-          type="button"
-
-          // className={`${styles.btn} ${styles.btnActive}`}
-        >
-          Follow
-        </Button>
+        {isFollow ? (
+          <button
+            type="button"
+            onClick={onFollowing}
+            className={`${styles.btn} ${styles.btnActive}`}
+          >
+            Following
+          </button>
+        ) : (
+          <button type="button" onClick={onFollow} className={styles.btn}>
+            Follow
+          </button>
+        )}
       </div>
     </>
   );
