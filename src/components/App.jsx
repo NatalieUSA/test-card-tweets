@@ -1,11 +1,9 @@
-import UserCard from './UserCard/UserCard';
-
+import AppRoutes from 'AppRoutes';
 
 export const App = () => {
   return (
     <div style={{ margin: 'auto' }}>
-      <UserCard />
-   
+      <AppRoutes />
     </div>
   );
 };

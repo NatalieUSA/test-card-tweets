@@ -6,6 +6,16 @@ const instance = axios.create({
 export const getUsers = async () => {
   try {
     const { data } = await instance.get('/');
+    // console.log(data);
+    return data;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const editUsers = async fields => {
+  try {
+    const { data } = await instance.put(`/users/${fields.id}`, fields);
     console.log(data);
     return data;
   } catch (error) {
