@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
 
 // import HomePage from 'pages/HomePage';
 // import NotFoundPage from 'pages/NotFoundPage';
@@ -11,13 +11,11 @@ const TweetsPage = lazy(() => import('./pages/TweetsPage'));
 
 const AppRoutes = () => {
   return (
-    <Suspense>
-      <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="/tweets" element={<TweetsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route index element={<HomePage />} />
+      <Route path="/tweets" element={<TweetsPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 };
 export default AppRoutes;
