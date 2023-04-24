@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/.github.io/test-card-tweets/static/css/main.24239017.css",
-    "main.js": "/.github.io/test-card-tweets/static/js/main.11cd9246.js",
+    "main.css": "/.github.io/test-card-tweets/static/css/main.6133d722.css",
+    "main.js": "/.github.io/test-card-tweets/static/js/main.df4afa1b.js",
     "static/media/Picture.png": "/.github.io/test-card-tweets/static/media/Picture.032662a2a907475127d7.png",
     "index.html": "/.github.io/test-card-tweets/index.html",
-    "main.24239017.css.map": "/.github.io/test-card-tweets/static/css/main.24239017.css.map",
-    "main.11cd9246.js.map": "/.github.io/test-card-tweets/static/js/main.11cd9246.js.map"
+    "main.6133d722.css.map": "/.github.io/test-card-tweets/static/css/main.6133d722.css.map",
+    "main.df4afa1b.js.map": "/.github.io/test-card-tweets/static/js/main.df4afa1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.24239017.css",
-    "static/js/main.11cd9246.js"
+    "static/css/main.6133d722.css",
+    "static/js/main.df4afa1b.js"
   ]
 }
