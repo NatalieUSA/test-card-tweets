@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import Logo from '../../image/Logo.png';
 import Ellipse from '../../image/Ellipse.png';
 import Picture from '../../image/Picture.png';
-import styles from '../../UsersTweets/user-tweets.module.scss';
+import styles from './card-item.module.scss';
 
-const UserItem = ({ item }) => {
+const CardItem = ({ item }) => {
   const { id, user, tweets, followers, avatar } = item;
 
   const [isFollow, setIsFollower] = useState(
@@ -67,4 +67,4 @@ const UserItem = ({ item }) => {
     </>
   );
 };
-export default UserItem;
+export default CardItem;

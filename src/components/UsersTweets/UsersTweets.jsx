@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import UserList from './UserList/UserList';
 import { getUsers } from 'components/shared/api/api-users';
+import CardList from './CardList/CardList';
+
 import { ErrorMessage } from 'components/shared/ErrorMessage/ErrorMessage';
 import { Loader } from 'components/shared/Loader/Loader';
 
@@ -27,7 +28,7 @@ const UsersTweets = () => {
 
   return (
     <div>
-      {loading ? <Loader /> : <UserList items={users} />}
+      {loading ? <Loader /> : <CardList items={users} />}
       {error && (
         <ErrorMessage>...error load cards...cards load failed</ErrorMessage>
       )}

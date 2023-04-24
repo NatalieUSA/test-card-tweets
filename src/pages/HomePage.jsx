@@ -1,17 +1,23 @@
 import { Link } from 'react-router-dom';
-import styles from '../components/shared/Button/button.module.scss';
+
+import styles from './pages.module.scss';
 
 const HomePage = () => {
   return (
-    <div>
-      <p>Finding people to follow· Select the Follow button.</p>
-      <p>
-        What is following? Following someone means: You are subscribing to their
-        Tweets as a follower.
-      </p>
-      <Link to="/tweets" className={styles.btn}>
-        to tweets page
-      </Link>
+    <div className={styles.wrap}>
+      <div className={styles.items}>
+        <p className={styles.text}>
+          What is following? <br />
+          Following someone means: <br />
+          You are subscribing to their Tweets as a follower.
+          <br />
+          Find people to follow· <br />
+          Select the Follow button.
+        </p>
+        <Link to="/tweets" className={styles.btn}>
+          to tweets page
+        </Link>
+      </div>
     </div>
   );
 };
