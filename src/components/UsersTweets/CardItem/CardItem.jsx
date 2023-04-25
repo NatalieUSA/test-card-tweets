@@ -71,13 +71,5 @@ const CardItem = ({ item }) => {
 export default CardItem;
 
 CardItem.propTypes = {
-  item: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.number.isRequired,
-      user: propTypes.string.isRequired,
-      tweets: propTypes.number.isRequired,
-      followers: propTypes.number.isRequired,
-      avatar: propTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
+  item: propTypes.object.isRequired,
 };

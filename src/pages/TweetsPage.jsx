@@ -9,8 +9,9 @@ const TweetsPage = () => {
       <Link to="/" className={styles.btn}>
         back
       </Link>
-
-      <UsersTweets />
+      <div>
+        <UsersTweets />
+      </div>
     </div>
   );
 };

@@ -5,6 +5,8 @@ import CardList from './CardList/CardList';
 import { ErrorMessage } from 'components/shared/ErrorMessage/ErrorMessage';
 import { Loader } from 'components/shared/Loader/Loader';
 
+import styles from './user-tweets.module.scss';
+
 const UsersTweets = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -27,7 +29,7 @@ const UsersTweets = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.wrap}>
       {loading ? <Loader /> : <CardList items={users} />}
       {error && (
         <ErrorMessage>...error load cards...cards load failed</ErrorMessage>

@@ -32,11 +32,10 @@ const CardList = ({ items, ...otherProps }) => {
 
 export default CardList;
 
+CardList.defaultProps = {
+  items: [],
+};
+
 CardList.propTypes = {
-  items: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.number.isRequired,
-      item: propTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
+  items: propTypes.array.isRequired,
 };

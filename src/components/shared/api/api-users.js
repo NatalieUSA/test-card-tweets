@@ -12,13 +12,3 @@ export const getUsers = async () => {
     return error.message;
   }
 };
-
-export const editUsers = async fields => {
-  try {
-    const { data } = await instance.put(`/users/${fields.id}`, fields);
-    console.log(data);
-    return data;
-  } catch (error) {
-    return error.message;
-  }
-};

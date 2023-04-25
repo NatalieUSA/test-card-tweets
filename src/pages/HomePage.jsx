@@ -14,10 +14,10 @@ const HomePage = () => {
           Find people to follow· <br />
           Select the Follow button.
         </p>
-        <Link to="/tweets" className={styles.btn}>
-          to tweets page
-        </Link>
       </div>
+      <Link to="/tweets" className={styles.btn}>
+        to tweets page
+      </Link>
     </div>
   );
 };
