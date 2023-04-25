@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import Logo from '../../image/Logo.png';
 import Ellipse from '../../image/Ellipse.png';
@@ -7,25 +8,25 @@ import styles from './card-item.module.scss';
 const CardItem = ({ item }) => {
   const { id, user, tweets, followers, avatar } = item;
 
-  const [isFollow, setIsFollower] = useState(
+  const [isFollow, setIsFollow] = useState(
     JSON.parse(localStorage.getItem(`${id}-isFollow`)) ?? false
   );
-  const [totalFollowers, setNumbFollowers] = useState(
-    JSON.parse(localStorage.getItem(`${id}-followers`)) ?? followers
+  const [totalFollowers, setTotalFollowers] = useState(
+    JSON.parse(localStorage.getItem(`${id}-follow`)) ?? followers
   );
 
   useEffect(() => {
-    localStorage.setItem(`${id}-isFollower`, JSON.stringify(isFollow));
-    localStorage.setItem(`${id}-user`, JSON.stringify(totalFollowers));
+    localStorage.setItem(`${id}-isFollow`, JSON.stringify(isFollow));
+    localStorage.setItem(`${id}-follow`, JSON.stringify(totalFollowers));
   }, [id, totalFollowers, isFollow]);
 
   const onFollowing = () => {
-    setIsFollower(false);
-    setNumbFollowers(totalFollowers - 1);
+    setIsFollow(false);
+    setTotalFollowers(totalFollowers - 1);
   };
   const onFollow = () => {
-    setIsFollower(true);
-    setNumbFollowers(totalFollowers + 1);
+    setIsFollow(true);
+    setTotalFollowers(totalFollowers + 1);
   };
 
   return (
@@ -68,3 +69,15 @@ const CardItem = ({ item }) => {
   );
 };
 export default CardItem;
+
+CardItem.propTypes = {
+  item: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number.isRequired,
+      user: propTypes.string.isRequired,
+      tweets: propTypes.number.isRequired,
+      followers: propTypes.number.isRequired,
+      avatar: propTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+};
